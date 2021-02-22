@@ -1,0 +1,52 @@
+.ads {
+  min-height: 90%;
+  width: 40%;
+  padding: 50px;
+
+  h2 {
+    text-align: left;
+    font-weight: 300;
+  }
+
+  .wrapper-input-file {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    .label-file {
+      display: flex;
+      align-items: center;
+      margin-bottom: 70px;
+    }
+
+    .wrap-input {
+      position: relative;
+
+      .dashed {
+        border: 1px dashed #fff;
+        border-radius: 8px;
+        width: 275px;
+        height: 270px;
+        position: relative;
+        margin-bottom: 70px;
+
+        #ad-file {
+          outline: none;
+          opacity: 0;
+        }
+      }
+
+      .btn-file {
+        width: 275px;
+        padding: 13px 84px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: var(--dark-block);
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+    }
+  }
+}

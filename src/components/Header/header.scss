@@ -1,0 +1,229 @@
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  max-height: 100%;
+  background: var(--dark-gradient);
+  z-index: 9999;
+
+  .tabs {
+    display: none;
+  }
+
+  .wrap-header {
+    width: 90%;
+    height: 56px;
+    max-height: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    //#logoCentre {
+    //position: absolute;
+    //top: 50%;
+    //left: 50%;
+    //transform: translate(-50%, -50%);
+    //}
+
+    h4 {
+      margin-left: -10%;
+      display: inline;
+      font-size: 16px;
+      line-height: 23px;
+      color: var(--text-color);
+      opacity: 0.7;
+      flex-grow: 2;
+    }
+
+    nav {
+      display: inline;
+      z-index: 2;
+      width: 15%;
+
+      a.navbar-brand {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        font-stretch: expanded;
+        line-height: 23px;
+        letter-spacing: 0.06em;
+        color: var(--gold);
+        width: 100%;
+
+        img {
+          //margin-right: 1em;
+          width: 100%;
+        }
+
+        span {
+          color: var(--text-color);
+          font-weight: bold;
+        }
+      }
+    }
+
+    .header-right {
+      //width: 64px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1em;
+
+      .startHeader {
+        .login {
+          margin: 0 30px;
+        }
+      }
+
+      .sound {
+        cursor: pointer;
+      }
+
+      .menu {
+        position: relative;
+        display: flex;
+        cursor: pointer;
+        margin-left: 30px;
+
+        &:after {
+          content: '';
+          position: absolute;
+          height: 15px;
+          width: 100%;
+          bottom: -15px;
+          right: 0;
+        }
+      }
+
+      .burger {
+        transition: all 0.3s;
+
+        &-menu {
+          position: absolute;
+          right: 0;
+          top: 40px;
+          list-style: none;
+          z-index: 10;
+          border-radius: 0 0 8px 8px;
+          background-color: var(--dark-light);
+          border: 1px solid rgba(255, 255, 255, .1);
+          padding: 0;
+          margin: 0;
+
+          &-item {
+            &:nth-child(4) {
+              border-bottom-left-radius: 8px;
+              border-bottom-right-radius: 8px;
+            }
+
+            white-space: nowrap;
+            margin: 0;
+            font-size: 16px;
+            font-weight: 300;
+            padding: 2px 12px;
+            position: relative;
+            cursor: pointer;
+
+            span {
+              opacity: 0.8;
+
+              &:hover {
+                opacity: 1;
+              }
+            }
+
+            &.bord:after {
+              position: absolute;
+              bottom: -1px;
+              left: 10%;
+              content: '';
+              width: 90%;
+              height: 1px;
+              border: none;
+              background-color: var(--text-color);
+              opacity: 0.2;
+            }
+          }
+        }
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+  }
+}
+
+.auth-header-icon {
+  display: none;
+}
+
+@media screen and(min-width: 1400px) {
+  .wrap-header {
+    padding: 0 60px;
+  }
+}
+
+@media screen and(max-width: 768px) {
+  .auth-header {
+    display: none;
+  }
+
+  header .wrap-header nav a.navbar-brand {
+    img {
+      width: 114px;
+    }
+  }
+  .header-right {
+    .reload {
+      display: none;
+    }
+  }
+
+  header .wrap-header .header-right .startHeader .login {
+    margin: 0 10px;
+  }
+  .auth-header-icon {
+    display: inline;
+  }
+  header {
+    .tabs {
+      display: block;
+      padding: 0 20px 10px 20px;
+      background: var(--dark-gradient);
+
+      .wrap-tabs {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        background-color: #151929;
+        border-radius: 8px;
+        padding: 2px;
+        .tab {
+          width: 50%;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          &.active {
+            background-color: #2C3558;
+            border-radius: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+

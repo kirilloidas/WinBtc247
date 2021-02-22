@@ -1,0 +1,272 @@
+.auth {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 30px;
+  margin-top: 30px;
+  min-width: 328px;
+  max-height: 568px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .ok {
+      background-color: rgba(0, 0, 0, .5);
+      border: 1px solid var(--text-color);
+      color: var(--text-color);
+      border-radius: 8px;
+      height: 40px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-decoration: none;
+      text-align: center;
+      padding: 7px;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      margin-bottom: 10px;
+
+      label {
+        margin-bottom: 3px;
+        position: relative;
+      }
+
+      input {
+        background-color: inherit;
+        border: 1px solid #FFFFFF;
+        border-radius: 8px;
+        height: 40px;
+        padding: 10px;
+      }
+    }
+
+    .pass {
+      position: relative;
+
+      .eye {
+        position: absolute;
+        top: 40px;
+        right: 10px;
+        width: 22px;
+        height: 15px;
+        background-repeat: no-repeat;
+        background-image: url("../../images/eye.svg");
+        cursor: pointer;
+      }
+
+    }
+
+    .text {
+      position: relative;
+
+      .eye {
+        position: absolute;
+        top: 40px;
+        right: 10px;
+        width: 22px;
+        height: 15px;
+        background-repeat: no-repeat;
+        background-image: url("../../images/eyeSlash.svg");
+        cursor: pointer;
+      }
+    }
+
+    span {
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: rgba(0, 0, 0, .5);
+      border: 1px solid #FFFFFF;
+      border-radius: 8px;
+      min-height: 40px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      margin-top: 10px;
+    }
+
+    .forgot {
+      text-align: left;
+      font-size: 12px;
+      color: var(--text-color);
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+
+  .restore-arrow {
+    font-size: 24px;
+    width: 15px;
+    position: absolute;
+    left: 30px;
+    top: .5em;
+    cursor: pointer;
+  }
+
+  .back {
+    font-size: 24px;
+    width: 15px;
+    position: absolute;
+    left: 30px;
+    top: .5em;
+    cursor: pointer;
+
+    &:hover {
+      left: 30px;
+      width: 15px;
+    }
+
+    img {
+      &:hover {
+        margin: 0 auto;
+      }
+    }
+
+    a {
+      font-size: 24px;
+    }
+
+  }
+
+  .restore-arrow {
+    left: 15px;
+    top: 0.5em;
+    font-size: 20px;
+  }
+}
+
+.restore {
+  form {
+    a {
+      text-transform: uppercase;
+      margin-top: 16px;
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    button {
+      text-transform: uppercase;
+      margin-top: 16px;
+    }
+
+    input {
+      margin-bottom: 16px;
+    }
+
+    div {
+      h2 {
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 16px;
+      }
+    }
+  }
+}
+
+.support-link {
+  font-size: 12px;
+  font-weight: 300;
+  margin-top: 15px;
+}
+
+.PhoneInput {
+  width: 100%;
+  //height: 20px;
+  .PhoneInputCountry {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 30px;
+    position: absolute;
+
+    .PhoneInputCountryIcon {
+      position: relative;
+
+      svg {
+        height: 20px;
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+
+      img {
+        height: 20px;
+        margin-top: 10px;
+        margin-left: 10px;
+        //position: absolute;
+        //top: -23px;
+        //left: 0;
+      }
+    }
+
+  }
+
+  #phone {
+    background-color: inherit;
+    border: 1px solid #FFFFFF;
+    border-radius: 8px;
+    height: 40px;
+    padding-left: 60px;
+  }
+
+  select {
+    width: 55px;
+    height: 40px;
+    position: absolute;
+    z-index: 5;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    background: url('../../images/select.png') no-repeat right center;
+    border: none;
+    color: transparent;
+
+    &:focus {
+      background: url('../../images/select2.png') no-repeat right center;
+    }
+
+    option {
+      background-color: var(--dark-light);
+      font-weight: 300;
+    }
+  }
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  div.round-dark.auth {
+    max-height: 90%;
+    width: 328px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    form {
+      max-height: 80%;
+      justify-content: space-between;
+
+      button {
+        //margin: 0;
+      }
+    }
+  }
+  .restore {
+    height: auto;
+
+    input {
+      margin: 10px 0 30px 0;
+    }
+  }
+}
+
+.error {
+  max-width: 320px;
+}

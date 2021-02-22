@@ -1,0 +1,96 @@
+:root {
+  --gold: #F7931A;
+  --text-color: #FFFFFF;
+  --bg-dark: #161931;
+  --alert: #F94439;
+  --dark-light: #1a1f34;
+  --dark-gradient: #1a1f34;
+  --dark-opacity: rgba(141, 217, 252, 0.5);
+  --dark-block: rgba(0, 0, 0, .5);
+  --black: #000000;
+  --down: #FF453A;
+  --up: #32D74B;
+  --btn-color: rgba(37, 14, 37, 1);
+  --btn-color-hover: rgba(37, 14, 37, 1);
+}
+
+*, *:after, *:before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "roc-grotesk", sans-serif;
+  font-size: 16px;
+  color: var(--text-color);
+  letter-spacing: 1px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+
+  &:hover {
+    color: var(--text-color);
+  }
+}
+
+button {
+  transition: all 0.2s !important;
+}
+
+#root {
+  min-height: 100vh;
+  background-image: url("images/main_bg.png");
+  background-size: cover;
+  //background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#chartjs-tooltip {
+  transition: all .5s;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.red {
+  color: var(--down);
+}
+
+.green {
+  color: var(--up);
+}
+
+.gold {
+  color: var(--gold);
+}
+
+.red-bg {
+  background-color: var(--down);
+}
+
+.green-bg {
+  background-color: var(--up);
+}
+
+.gold-bg {
+  background-color: var(--gold);
+}
+
+@media screen and (max-width: 1200px) {
+  *, *:after, *:before {
+  }
+}
+
+//@media screen and (max-width: 756px) {
+//  #root {
+//    background-image: url("images/mobile_bg.png");
+//    background-position: center;
+//  }
+//}
+
+
+
+
