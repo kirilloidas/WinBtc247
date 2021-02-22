@@ -40,7 +40,7 @@ const Invite = ({history}) => {
                 <div className="share-link">
                     <span className="label ">Share link <span
                         style={{display: copied ? "block" : "none"}} className="green">Link is copied</span></span>
-                    <input type="text" id="link" readOnly defaultValue="bitcybets.com/inviting"/>
+                    <input type="text" id="link" readOnly defaultValue="winbtc247.com/inviting"/>
                     <button onClick={copy} className="invite-btn">COPY LINK</button>
                 </div>
                 <div className="d-flex justify-content-center mt-3"><Link to="/support" className="support-link">Need
