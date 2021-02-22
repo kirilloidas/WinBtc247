@@ -8,7 +8,10 @@
   min-height: 100vh;
   position: relative;
 }
-
+b.gold {
+  color: var(--text-color);
+  font-weight: bold!important;
+}
 main {
   padding: 60px 60px 0 60px;
   height: 100%;
@@ -995,8 +998,16 @@ form {
     align-items: center;
     margin: 0 auto;
 
-    img.text {
+    h2.text {
       width: 250px;
+      font-size: 48px;
+      .gold {
+        font-size: 48px;
+        font-weight: 300;
+      }
+      b.gold {
+        font-size: 48px;
+      }
     }
 
     .wrap-img-preload {

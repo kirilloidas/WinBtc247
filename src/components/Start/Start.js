@@ -92,7 +92,7 @@ const Start = ({currentCourse, course, history, lastSeconds, userdata, widthMode
                 <div className="text text-center">
                     <span className="gold">Real ICO</span>
                     <h2>
-                        <span className="gold">WIN</span>BTC<span className="gold">247</span>
+                        <span className="gold">WIN</span>BTC<span className="gold">24<b className="gold">/</b>7</span>
                     </h2>
                     <p className="mt-3">Make real Bitcoin bets</p>
                 </div>

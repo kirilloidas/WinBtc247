@@ -12,7 +12,9 @@ const Preloader = ({show}) => {
     if (!show) {
         return (
             <div  className="load">
-                <img className="text" src={bitsybets} alt=""/>
+                <h2 className="text">
+                    <span className="gold">WIN</span>BTC<span className="gold">24<b className="gold">/</b>7</span>
+                </h2>
                 <div className="wrap-img-preload">
                     <img className="coin1"  src={coin} alt=""/>
                     <img className="coin2"  src={coin} alt=""/>
