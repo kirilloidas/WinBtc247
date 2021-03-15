@@ -619,7 +619,6 @@ form {
       }
     }
 
-
   }
 
 }
@@ -908,7 +907,7 @@ form {
       flex-direction: column;
 
       button {
-        background-color: rgba(0, 0, 0, .5);
+        background-color: var(--dark-block);
         border: 1px solid #FFFFFF;
         border-radius: 8px;
         min-height: 40px;

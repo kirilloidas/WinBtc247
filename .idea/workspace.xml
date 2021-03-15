@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bea685e-9d1d-40dc-af3c-53677054f828" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/images/qrqcode.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/video/promotion.webm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main/Preloader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/Preloader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Auth/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Auth/Auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Main/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Refill/Btc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Refill/Btc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Start/Start.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Start/Start.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Start/start.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Start/start.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/game.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +31,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/video" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -38,6 +43,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\PC-002\WebstormProjects\WinBtc247\src\video" />
+      <recent name="C:\Users\PC-002\WebstormProjects\WinBtc247\src\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\PC-002\WebstormProjects\WinBtc247\src\images" />
     </key>
   </component>
@@ -52,7 +61,10 @@
       <workItem from="1613989523435" duration="4384000" />
       <workItem from="1614004534042" duration="1018000" />
       <workItem from="1614007981297" duration="1870000" />
-      <workItem from="1614019200487" duration="839000" />
+      <workItem from="1614019200487" duration="1637000" />
+      <workItem from="1614681178212" duration="3259000" />
+      <workItem from="1614686218329" duration="1171000" />
+      <workItem from="1615798176389" duration="2766000" />
     </task>
     <servers />
   </component>

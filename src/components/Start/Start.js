@@ -8,6 +8,9 @@ import arrowDown from "../../images/arrowDown.svg";
 import arrowUp from "../../images/arrowUp.svg";
 import bull from "../../images/bull_start.png";
 import bear from "../../images/bear_start.png";
+import promotion1 from "../../video/promotion.mp4";
+import promotion2 from "../../video/promotion.webm";
+import poster from "../../video/poster.jpg";
 import Rect from "../Main/Rect/Rect";
 import Preloader from "../Main/Preloader";
 import bitsybets from "../../images/BITCYBETS.svg";
@@ -48,18 +51,6 @@ const Start = ({currentCourse, course, history, lastSeconds, userdata, widthMode
     return (
         <div  className="start">
 
-            {/*<div style={{display: predict === 'win' ? "block" : "none"}} className="blur soon">*/}
-            {/*    <div className="round-dark win">*/}
-            {/*        <div className="win-btn">*/}
-            {/*            <h2>Sorry, you're out of luck! <br/> try again!</h2>*/}
-            {/*            <button onClick={() => {*/}
-            {/*                setPredict('');*/}
-            {/*                setBet('');*/}
-            {/*            }} className="btn btn-primary">OK*/}
-            {/*            </button>*/}
-            {/*        </div>*/}
-            {/*    </div>*/}
-            {/*</div>*/}
             <div style={{display: predict ? "block" : "none"}} className="blur soon">
                 <div className="round-dark win">
                     <div className="win-btn">
@@ -90,11 +81,16 @@ const Start = ({currentCourse, course, history, lastSeconds, userdata, widthMode
                 <div className="bull-start"><img src={bull} alt="bull"/></div>
                 <div className="bear-start"><img src={bear} alt="bear"/></div>
                 <div className="text text-center">
-                    <span className="gold">Real ICO</span>
                     <h2>
                         <span className="gold">WIN</span>BTC<span className="gold">24<b className="gold">/</b>7</span>
                     </h2>
-                    <p className="mt-3">Make real Bitcoin bets</p>
+                    {/*<p className="mt-3">Make real Bitcoin bets</p>*/}
+                    <video style={{objectFit: "cover"}} controls="controls" poster={poster} >
+                        <source src={promotion1}  type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'/>
+                        <source src={promotion2} type='video/webm; codecs="vp8, vorbis"'/>
+                        {/*<source src="video/duel.ogv" type='video/ogg; codecs="theora, vorbis"'>*/}
+
+                    </video>
                 </div>
                 <div className="dark">
                     <Time/>

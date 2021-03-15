@@ -1,7 +1,7 @@
 import React, {useState, useRef} from 'react';
 import back from "../../images/back.svg";
 import add from "../../images/add_photo_alternate.svg";
-import qrcode from "../../images/qrqcode.png";
+import qrcode from "../../images/qrqcode.jpg";
 import Header from "../Header/Header";
 import {User} from "../../api/User";
 import {Link} from "react-router-dom";
@@ -71,7 +71,7 @@ const Btc = ({history}) => {
                 <div className="round-dark">
                     <div className="qrcode">
                         <h2>Our BTC wallet</h2>
-                        <img src={qrcode} alt="qr"/>
+                        <img width="120" src={qrcode} alt="qr"/>
                     </div>
                     <span onClick={() => history.goBack()} className="back"><img src={back} alt="back"/></span>
                     <h2>Payment by BTC</h2>
@@ -80,7 +80,7 @@ const Btc = ({history}) => {
                     <div className="refill-input">
                         <div className="input-wrap">
                             <input id='link' className="card-number" readOnly
-                                   defaultValue="1FC2Jv4m2cEMi7RRzY34nNFgNkaDSonvcK" type="text"/>
+                                   defaultValue="1MGevWgZznoWPeYGzHutTyopfc6FtELqFT" type="text"/>
                         </div>
                     </div>
 

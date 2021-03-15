@@ -1,6 +1,10 @@
 .start {
   width: 1280px;
-
+video {
+  max-width: 40%;
+  border: 5px solid var(--text-color);
+  border-radius: 8px;
+}
   .round {
     //background-image: url("../../images/bull_start.png"), url("../../images/bear_start.png");
     //background-position: .5% 3%, 99.5% 3%;
@@ -89,8 +93,8 @@
     }
 
     .text {
-      margin-top: 50px;
-      margin-bottom: 50px;
+      //margin-top: 50px;
+      //margin-bottom: 50px;
 
       * {
         font-family: "roc-grotesk-wide", sans-serif;
@@ -106,13 +110,12 @@
       h2 {
         width: 100%;
         font-weight: 500;
-        font-size: 48px;
-        line-height: 69px;
-        margin-top: 20px;
+        font-size: 40px;
+        margin-top: 5px;
 
         .gold {
           letter-spacing: 5px;
-          font-size: 48px;
+          font-size: 40px;
         }
       }
 
