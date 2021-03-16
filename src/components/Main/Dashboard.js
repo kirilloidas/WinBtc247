@@ -32,8 +32,8 @@ class Dashboard extends React.Component {
         if (!bet) {
             bet = 0.0001;
         }
-        if (bet > 1) {
-            bet = 1;
+        if (bet > this.props.balance) {
+            bet = this.props.balance;
         }
         this.setState((state) => ({...state, ...{bet: bet ? bet : 0.0001}}));
     }
@@ -151,7 +151,7 @@ class Dashboard extends React.Component {
                                             <div className="profit">
                                                 <span style={{display: widthMode === "mobile" ? "block" : "inline"}}g className="green">Your profit</span>
                                                 <span>
-                                                    {up || down ? ((bet / (bet + upBets) * downBets) * 0.97).toFixed(4) : 0}
+                                                    {(bet * 2 * 0.97).toFixed(4)}
                                                 </span>
                                                 <img src={bitcoin} width="15" height="20" alt="b"/>
                                             </div>
@@ -220,7 +220,7 @@ class Dashboard extends React.Component {
                                             <div className="profit">
                                                 <span style={{display: widthMode === "mobile" ? "block" : "inline"}} className="red">Your profit</span>
                                                 <span>
-                                                    {up || down ? ((bet / (bet + downBets) * upBets) * 0.97).toFixed(4) : 0}
+                                                    {(bet * 2 * 0.97).toFixed(4)}
                                                 </span>
                                                 <img src={bitcoin} width="15" height="20" alt="b"/>
                                             </div>
