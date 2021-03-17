@@ -1,17 +1,18 @@
-import React, {useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import {connect} from "react-redux";
 import './main.scss';
 import bitcoin from '../../images/bitcoin.svg';
+import times from '../../images/times-solid.svg';
 import Graph from "../Graph";
 import RightSector from "./RightSector";
 import Dashboard from "./Dashboard";
-// import SelectList from "./SelectList";
+import riches from "../riches";
 import {
     closeCongratulation,
     closeYourLose,
     createAd,
     logoutQuestion,
-    prohibition,
+    prohibition, setRichesShow,
     switchView
 } from "../../redux/actions";
 import {money, stop} from "../../redux/actions/music";
@@ -46,28 +47,7 @@ const fire = () => {
     firework.start();
 };
 
-const Main = ({
-                  history,
-                  view,
-                  switchView,
-                  course,
-                  lastWin,
-                  closeCongratulation,
-                  congratulation,
-                  yourlose,
-                  closeYourLose,
-                  currentCourse,
-                  money,
-                  muteToggle,
-                  logout,
-                  logoutQuestion,
-                  prohibition,
-                  userdata,
-                  lastWinGame,
-                  createAd,
-                  createAdProp,
-                  widthMode
-              }) => {
+const Main = ({history, view, showRiches, setRichesShow, switchView, course, lastWin, closeCongratulation, congratulation, yourlose, closeYourLose, currentCourse, money, muteToggle, logout, logoutQuestion, prohibition, userdata, lastWinGame, createAd, createAdProp, widthMode}) => {
     useEffect(() => {
         userdata();
         fire();
@@ -79,7 +59,15 @@ const Main = ({
     let flag = course ? course.length : false;
     return (
         <div className={`${widthMode}-bg main`}>
-            <Preloader show={flag}/>
+            <Preloader show={flag}/> <div className="riches">
+                <ul style={{display: showRiches ? "block" : "none"}}>
+                    <img onClick={()=>setRichesShow(false)} src={times} width={30} alt=""/>
+                    <li className="upper"><span className="head">User</span><span className="head">Wins</span><span className="head">Loses</span><span className="head">Balance</span></li>
+                    {riches.map(man => (<li>
+                        <span>{man.name}</span><span>{man.wins}</span><span>{man.loses}</span><span>{man.balance}</span>
+                    </li>))}
+                </ul>
+            </div>
             <div style={{display: congratulation ? "block" : "none"}} className="blur">
                 <canvas width="640" height="480" id="fireworks-canvas" style={{background: 'rgba(0,0,0, .2)'}}/>
                 <div className="round-dark win">
@@ -168,6 +156,7 @@ const mapStateToProps = state => {
         congratulation: state.balanceReducer.congratulation,
         yourlose: state.balanceReducer.yourlose,
         logout: state.authReducer.logoutQuestion,
+        showRiches: state.authReducer.showRiches,
         createAdProp: state.switchOptions.createAd,
         widthMode: state.switchOptions.widthMode,
         view: state.switchOptions.view
@@ -182,6 +171,7 @@ const mapDispatchToProps = {
     prohibition,
     userdata,
     createAd,
-    switchView
+    switchView,
+    setRichesShow
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Main);

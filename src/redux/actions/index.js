@@ -6,7 +6,7 @@ import {
     GET_COURSE, GET_CURRENT_COURSE,
     GET_LOCATION, LOGOUT,
     PROHIBITION,
-    REGISTRATION, VIEW_MODE
+    REGISTRATION, SET_SHOW_RICHES, VIEW_MODE
 } from "../types";
 
 import {userdata} from "./game";
@@ -90,4 +90,8 @@ export function switchView(param) {
     return dispatch => {
         dispatch({type: VIEW_MODE, payload: param});
     }
+}
+export function setRichesShow(bool) {
+    return {type: SET_SHOW_RICHES, payload: bool};
+
 }

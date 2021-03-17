@@ -9,12 +9,10 @@ export function userdata() {
     return async dispatch => {
         try {
             const response = await User.userdata();
-            console.log(response)
             const payload = await response.data.data;
             await dispatch({type: GET_USER_DATA, payload});
         } catch (e) {
             if (e.response.status === 401) {
-                console.log(e.response.data);
                 await dispatch(unauthorized());
             }
         }

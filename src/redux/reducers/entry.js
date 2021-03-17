@@ -3,8 +3,9 @@ import {
     GET_COURSE,
     GET_LOCATION, GOAWAY, LOGOUT,
     PROHIBITION,
-    REGISTRATION, VIEW_MODE
+    REGISTRATION, SET_SHOW_RICHES, VIEW_MODE
 } from "../types";
+import {act} from "@testing-library/react";
 
 const initialState = {
     auth: false,
@@ -18,7 +19,8 @@ const initialState = {
     createAd: false,
     unauthorized: false,
     widthMode: window.outerWidth > 756 ? "desktop" : "mobile",
-    view: false
+    view: false,
+    showRiches: false
 }
 
 export const switchOptions = (state = initialState, action) => {
@@ -53,6 +55,8 @@ export const authReducer = (state = initialState, action) => {
             return {...state, reg: !state.reg}
         case LOGOUT:
             return {...state, logoutQuestion: !state.logoutQuestion}
+        case SET_SHOW_RICHES:
+            return {...state, showRiches: action.payload}
         default:
             return state;
     }

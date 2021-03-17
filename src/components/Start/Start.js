@@ -18,6 +18,7 @@ import coin from "../../images/coin.svg";
 import {userdata} from "../../redux/actions/game";
 import {registration} from "../../redux/actions";
 
+
 const Start = ({currentCourse, course, history, lastSeconds, userdata, widthMode, registration}) => {
     const [timeGame, setTimeGame] = useState(false);
     const [bet, setBet] = useState('');
@@ -134,6 +135,7 @@ const Start = ({currentCourse, course, history, lastSeconds, userdata, widthMode
 
             </div>
             <div className="bg"/>
+
         </div>
     );
 }
