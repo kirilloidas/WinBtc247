@@ -10,6 +10,7 @@ export function userdata() {
         try {
             const response = await User.userdata();
             const payload = await response.data.data;
+            console.log(payload)
             await dispatch({type: GET_USER_DATA, payload});
         } catch (e) {
             if (e.response.status === 401) {

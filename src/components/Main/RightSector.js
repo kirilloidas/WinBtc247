@@ -12,7 +12,7 @@ import {changeDemo, userdata} from "../../redux/actions/game";
 import {createAd} from "../../redux/actions";
 import {User} from "../../api/User";
 
-const RightSector = ({balance, roulette, spingo, lastWinGame, lastgame, wins, colorBlalance, click, userdata, name, isDemo, threewins, changeDemo, createAd, predict}) => {
+const RightSector = ({balance, roulette, spingo, lastWinGame, lastgame, wins, colorBlalance, click, userdata, name, isDemo, threewins, changeDemo, createAd, predict, wheelAvailable}) => {
     const [switcher, setSwitcher] = useState(false);
     const [chance, setChance] = useState(0);
     const [go, setGo] = useState(false);
@@ -29,11 +29,30 @@ const RightSector = ({balance, roulette, spingo, lastWinGame, lastgame, wins, co
                 setBanner("banner one round-dark");
             }
         }, 30000)
+        console.log(chance)
         return () => clearInterval(addBanner)
     }, [banner])
     useEffect(() => {
         userdata();
     }, [])
+
+    const spinHander = () => {
+        console.log(wheelAvailable)
+        if(true)  {
+            setChance(0);
+            spingo(true);
+            User.wheelSPeen()
+                .then(res => {
+                    setChance((+res.data.data - 3) * 45 + 720);
+                    roulette();
+                    setGo(true);
+                    setTimeout(() => {
+                        setGo(false);
+                        spingo(false);
+                    }, 5000)
+                })
+        } 
+    }
 
     return (
         <div className="right-sector">
@@ -112,20 +131,8 @@ const RightSector = ({balance, roulette, spingo, lastWinGame, lastgame, wins, co
             <div  className="banner">
                 <img style={{transform: `rotate(-${chance}deg)`}} className={ + go ? "wheel go" : "wheel"} src={wheel} alt="wheel"/>
                 {console.log(go)}
-                <span className='span-spin' style={{display: !go ? 'block' : 'none'}}>Spin</span>
-                <img onClick={() => {
-                    setChance(0);
-                    spingo(true);
-                    User.wheelSPeen()
-                        .then(res => {
-                            setChance((+res.data.data - 3) * 45 + 720);
-                            roulette();
-                            setGo(true);
-                            setTimeout(() => {
-                                setGo(false);
-                                spingo(false);
-                            }, 5000)
-                        })}} style={{display: go ? "none" : "inline"}} className="spin" src={spin} width={65} alt="spin"/>
+                <span onClick={() => {spinHander()}} className='span-spin' style={{display: !go ? 'block' : 'none', }}>Spin</span>
+                <img onClick={() => {spinHander()}} style={{display: go ? "none" : "inline"}} className="spin" src={spin} width={65} alt="spin"/>
                 <img  className="pointer" src={pointer} alt="pointer"/>
             </div>
         </div>
@@ -143,6 +150,7 @@ const mapStateToProps = state => {
         threewins: state.balanceReducer['3wins'],
         isDemo: state.balanceReducer.isDemo,
         predict: state.balanceReducer.predict,
+        wheelAvailable: state.balanceReducer.wheelAvailable
     }
 }
 const mapDispatchToProps = {
