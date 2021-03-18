@@ -1456,5 +1456,41 @@ form {
   }
 }
 
+.smiles{
+  display: flex !important;
+  flex-direction: row !important;
+  // justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .smile-block {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    span{
+      cursor: pointer;
+      font-size: 64px;
+    }
+  
+    .smile-close {
+      position: absolute;
+      top: 0;
+      left: 25%;
+      
+    }
+
+    // .btn {
+    //   color: color: #F7931A;;
+    // }
+
+    // .cross {
+    //   color: red;
+    // }
+  }
+  
+}
+
 
 
