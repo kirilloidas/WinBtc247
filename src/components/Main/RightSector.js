@@ -121,7 +121,8 @@ const RightSector = ({balance, lastWinGame, lastgame, wins, colorBlalance, click
                         }, 5000)
                     })}} className="banner">
                 <img style={{transform: `rotate(-${chance}deg)`}} className={ + go ? "wheel go" : "wheel"} src={wheel} alt="wheel"/>
-                <img style={{display: go ? "none" : "inline"}} className="spin" src={spin} width={50} alt="spin"/>
+                <span className='span-spin'>Spin</span>
+                <img style={{display: go ? "none" : "inline"}} className="spin" src={spin} width={65} alt="spin"/>
                 <img className="pointer" src={pointer} alt="pointer"/>
             </div>
         </div>

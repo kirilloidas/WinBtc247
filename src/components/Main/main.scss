@@ -1167,24 +1167,43 @@ form {
 }
 .spin {
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.pointer {
+.span-spin {
   position: absolute;
   top: 50%;
-  right: calc(5% + 1.5vw);
+  left: 43%;
+  z-index: 20000;
+  animation-name: blinker;
+      animation-iteration-count: infinite;
+      animation-delay: 500ms;
+      animation-duration: 3s;
+}
+.pointer {
+  position: absolute;
+  top: 57%;
+  right: calc(-1% + 1.5vw);
   transform: translate(0, -50%) rotate(90deg);
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1280px) {
   .pointer {
-    right: 12% !important;
+    // right: 12% !important;
+    top: 53%;
   }
 }
 @media screen and (min-width: 1000px) and (max-width: 1200px) {
+  .spin {
+    top: 50%;
+  }
+  .span-spin {
+    top: 46%;
+    left: 41%;
+  }
   .pointer {
+    top: 49%;
     right: 8% !important;
   }
 }
