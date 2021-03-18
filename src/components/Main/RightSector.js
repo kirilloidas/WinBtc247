@@ -111,8 +111,8 @@ const RightSector = ({balance, roulette, spingo, lastWinGame, lastgame, wins, co
             </div>
             <div  className="banner">
                 <img style={{transform: `rotate(-${chance}deg)`}} className={ + go ? "wheel go" : "wheel"} src={wheel} alt="wheel"/>
-
-                <span className='span-spin'>Spin</span>
+                {console.log(go)}
+                <span className='span-spin' style={{display: !go ? 'block' : 'none'}}>Spin</span>
                 <img onClick={() => {
                     setChance(0);
                     spingo(true);
@@ -125,7 +125,7 @@ const RightSector = ({balance, roulette, spingo, lastWinGame, lastgame, wins, co
                                 setGo(false);
                                 spingo(false);
                             }, 5000)
-                        })}} style={{display: go ? "none" : "inline"}} className="spin" src={spin} width={50} alt="spin"/>
+                        })}} style={{display: go ? "none" : "inline"}} className="spin" src={spin} width={65} alt="spin"/>
                 <img  className="pointer" src={pointer} alt="pointer"/>
             </div>
         </div>
