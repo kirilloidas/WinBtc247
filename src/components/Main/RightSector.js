@@ -12,6 +12,7 @@ import {changeDemo, userdata} from "../../redux/actions/game";
 import {createAd} from "../../redux/actions";
 import {User} from "../../api/User";
 
+
 const RightSector = ({
                          balance,
                          win,
@@ -47,11 +48,30 @@ const RightSector = ({
                 setBanner("banner one round-dark");
             }
         }, 30000)
+        console.log(chance)
         return () => clearInterval(addBanner)
     }, [banner])
     useEffect(() => {
         userdata();
     }, [])
+
+    const spinHander = () => {
+        console.log(wheelAvailable)
+        if(true)  {
+            setChance(0);
+            spingo(true);
+            User.wheelSPeen()
+                .then(res => {
+                    setChance((+res.data.data - 3) * 45 + 720);
+                    roulette();
+                    setGo(true);
+                    setTimeout(() => {
+                        setGo(false);
+                        spingo(false);
+                    }, 5000)
+                })
+        } 
+    }
 
     return (
         <div className="right-sector">

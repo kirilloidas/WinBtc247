@@ -54,7 +54,8 @@ export const balanceReducer = (state = initialState, action) => {
                     name: action.payload.name,
                     online: action.payload.online,
                     isDemo: action.payload.isDemo,
-                    wheelAvailable: action.wheelAvailable
+                    wheelAvailable: action.payload.wheelAvailable
+
                 };
 
             } else {
@@ -70,7 +71,7 @@ export const balanceReducer = (state = initialState, action) => {
                     name: action.payload.name,
                     online: action.payload.online,
                     isDemo: action.payload.isDemo,
-                    wheelAvailable: action.wheelAvailable
+                    wheelAvailable: action.payload.wheelAvailable
                 };
             }
         case GET_RATES:
