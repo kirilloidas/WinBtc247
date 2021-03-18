@@ -3,7 +3,7 @@ import deposit from '../../images/deposit.svg';
 import withdraw from '../../images/withdraw.svg';
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
-import {click, roulette, spingo} from "../../redux/actions/music";
+import {click, roulette, spingo, win} from "../../redux/actions/music";
 import switchWallet from "../../images/switch_wallet.svg";
 import wheel from "../../images/wheel.svg";
 import spin from "../../images/spin.png";
@@ -12,7 +12,26 @@ import {changeDemo, userdata} from "../../redux/actions/game";
 import {createAd} from "../../redux/actions";
 import {User} from "../../api/User";
 
-const RightSector = ({balance, roulette, spingo, lastWinGame, lastgame, wins, colorBlalance, click, userdata, name, isDemo, threewins, changeDemo, createAd, predict, wheelAvailable}) => {
+
+const RightSector = ({
+                         balance,
+                         win,
+                         wheelAvailable,
+                         roulette,
+                         spingo,
+                         lastWinGame,
+                         lastgame,
+                         wins,
+                         colorBlalance,
+                         click,
+                         userdata,
+                         name,
+                         isDemo,
+                         threewins,
+                         changeDemo,
+                         createAd,
+                         predict
+                     }) => {
     const [switcher, setSwitcher] = useState(false);
     const [chance, setChance] = useState(0);
     const [go, setGo] = useState(false);
@@ -21,11 +40,11 @@ const RightSector = ({balance, roulette, spingo, lastWinGame, lastgame, wins, co
 
     useEffect(() => {
         const addBanner = setInterval(() => {
-            if(banner === "banner one round-dark") {
+            if (banner === "banner one round-dark") {
                 setBanner("banner three round-dark");
-            // } else if (banner === "banner two round-dark") {
-            //     setBanner("banner three round-dark");
-            } else if(banner === "banner three round-dark") {
+                // } else if (banner === "banner two round-dark") {
+                //     setBanner("banner three round-dark");
+            } else if (banner === "banner three round-dark") {
                 setBanner("banner one round-dark");
             }
         }, 30000)
@@ -78,11 +97,11 @@ const RightSector = ({balance, roulette, spingo, lastWinGame, lastgame, wins, co
             <div className="score-wrap round-dark">
                 <h2>{isDemo ? "Demo wallet" : "My wallet"}
                     <span onClick={() => {
-                        if(!predict) {
+                        if (!predict) {
                             setSwitcher(true)
                         }
                     }} className={isDemo ? "switch-wrapper demo" : "switch-wrapper real"}
-                    style={predict ? {filter: 'grayscale(1)', opacity: .5} : null}>
+                          style={predict ? {filter: 'grayscale(1)', opacity: .5} : null}>
                     <img src={switchWallet} alt=""/>
                 </span></h2>
                 <table>
@@ -111,29 +130,53 @@ const RightSector = ({balance, roulette, spingo, lastWinGame, lastgame, wins, co
                 </table>
                 {!isDemo
                     ? <div>
-                    <Link to="/refill" style={{pointerEvents: predict ? "none" : "auto"}} className="btn money-btn green">DEPOSIT
-                    <img src={deposit} alt="deposit"/>
-                    </Link>
-                    <Link to="/withdraw" style={{pointerEvents: predict ? "none" : "auto"}} className="btn money-btn red">WITHDRAW
-                    <img src={withdraw} alt="withdraw"/>
-                    </Link>
+                        <Link to="/refill" style={{pointerEvents: predict ? "none" : "auto"}}
+                              className="btn money-btn green">DEPOSIT
+                            <img src={deposit} alt="deposit"/>
+                        </Link>
+                        <Link to="/withdraw" style={{pointerEvents: predict ? "none" : "auto"}}
+                              className="btn money-btn red">WITHDRAW
+                            <img src={withdraw} alt="withdraw"/>
+                        </Link>
                     </div>
                     : <div>
-                        <button disabled={predict} onClick={() => {setSwitcher(true)}}  className="btn money-btn green">BET REAL BITCOIN
+                        <button disabled={predict} onClick={() => {
+                            setSwitcher(true)
+                        }} className="btn money-btn green">BET REAL BITCOIN
                             {/*<img src={withdraw} alt="withdraw"/>*/}
                         </button>
-                        <Link to="/invite" style={{pointerEvents: predict ? "none" : "auto"}} className="btn money-btn friends">BETS WITH FRIENDS
+                        <Link to="/invite" style={{pointerEvents: predict ? "none" : "auto"}}
+                              className="btn money-btn friends">BETS WITH FRIENDS
                             {/*<img src={deposit} alt="deposit"/>*/}
                         </Link>
 
                     </div>}
             </div>
-            <div  className="banner">
-                <img style={{transform: `rotate(-${chance}deg)`}} className={ + go ? "wheel go" : "wheel"} src={wheel} alt="wheel"/>
-                {console.log(go)}
-                <span onClick={() => {spinHander()}} className='span-spin' style={{display: !go ? 'block' : 'none', }}>Spin</span>
-                <img onClick={() => {spinHander()}} style={{display: go ? "none" : "inline"}} className="spin" src={spin} width={65} alt="spin"/>
-                <img  className="pointer" src={pointer} alt="pointer"/>
+            <div onClick={() => {
+                if (wheelAvailable) {
+                    setChance(0);
+                    spingo(true);
+                    User.wheelSPeen()
+                        .then(res => {
+                    setChance((+res.data.data - 3) * 45 + 720);
+                    roulette();
+                    setGo(true);
+                    setTimeout(() => {
+                        setGo(false);
+                        spingo(false);
+                        setTimeout(() => win(), 500);
+                        userdata();
+                    }, 5000)
+                    })
+                }
+            }} className="banner">
+                <img style={{transform: `rotate(-${chance}deg)`}} className={+go ? "wheel go" : "wheel"} src={wheel}
+                     alt="wheel"/>
+                <span style={{display: go || !wheelAvailable ? "none" : "inline"}} className='span-spin'>Spin</span>
+                <img style={{display: go || !wheelAvailable ? "none" : "inline"}} className="spin" src={spin} width={60}
+                     alt="spin"/>
+                <img className="pointer" src={pointer} alt="pointer"/>
+                {wheelAvailable ? null : <span className="over">SPIN IS OVER TODAY</span>}
             </div>
         </div>
     );
@@ -150,7 +193,7 @@ const mapStateToProps = state => {
         threewins: state.balanceReducer['3wins'],
         isDemo: state.balanceReducer.isDemo,
         predict: state.balanceReducer.predict,
-        wheelAvailable: state.balanceReducer.wheelAvailable
+        wheelAvailable: state.balanceReducer.wheelAvailable,
     }
 }
 const mapDispatchToProps = {
@@ -159,6 +202,7 @@ const mapDispatchToProps = {
     changeDemo,
     createAd,
     roulette,
-    spingo
+    spingo,
+    win
 }
 export default connect(mapStateToProps, mapDispatchToProps)(RightSector);

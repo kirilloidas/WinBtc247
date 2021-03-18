@@ -29,6 +29,7 @@ const initialState = {
     online: 0,
     yourlose: false,
     wheelAvailable: false
+
 }
 export const balanceReducer = (state = initialState, action) => {
 
@@ -54,6 +55,7 @@ export const balanceReducer = (state = initialState, action) => {
                     online: action.payload.online,
                     isDemo: action.payload.isDemo,
                     wheelAvailable: action.payload.wheelAvailable
+
                 };
 
             } else {

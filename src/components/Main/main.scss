@@ -901,6 +901,7 @@ form {
       right: 10px;
       z-index: 9;
       cursor: pointer;
+
       &:active {
         transform: scale(0.9);
       }
@@ -1157,34 +1158,63 @@ form {
   margin-bottom: 0;
   margin-top: 20px;
 }
+
 .wheel {
   position: absolute;
   width: 100%;
   height: 100%;
 }
+
 .go {
   transition: all 7s;
 }
+
 .spin {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .span-spin {
   position: absolute;
-  top: 45%;
-  left: 43%;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 20000;
-  animation-name: blinker;
-      animation-iteration-count: infinite;
-      animation-delay: 500ms;
-      animation-duration: 3s;
+  font-weight: bold;
+  text-transform: uppercase;
+  animation-name: blinker2;
+  animation-iteration-count: infinite;
+  animation-delay: 500ms;
+  animation-duration: 2s;
+}
+
+@keyframes blinker2 {
+  0% {
+    color: var(--gold)
+  }
+  100% {
+    color: var(--black)
+  }
+}
+.over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: rgba(26,31,52,.9);
+  border-radius: 24px;
+  text-align: center;
+  color: var(--gold);
+  font-family: 'roc-grotesk-wide', sans-serif;
+  font-weight: bold;
 }
 .pointer {
   position: absolute;
   top: 50%;
-  right: calc(5% + 1.5vw);
   transform: translate(0, -50%) rotate(90deg);
 }
 
@@ -1204,11 +1234,12 @@ form {
 
 @media screen and (min-width: 1200px) and (max-width: 1280px) {
   .pointer {
-    right: calc(6% + 1.5vw);
-    // right: 12% !important;
-    // top: 53%;
+
+     right: 12% !important;
+    top: 50%;
   }
 }
+
 @media screen and (min-width: 1000px) and (max-width: 1200px) {
   .spin {
     top: 50%;
@@ -1222,6 +1253,7 @@ form {
     right: 10% !important;
   }
 }
+
 @media screen and (min-width: 1100px) and (max-width: 1280px) {
   .range {
     //width: 500px;
