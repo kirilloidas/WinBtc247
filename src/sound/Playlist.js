@@ -6,6 +6,7 @@ import tic from './tic.mp3';
 import clack from './clack.mp3';
 import fireworks from './fireworks.mp3';
 import roulette from './roulette.mp3';
+import success from './youwon.mp3';
 import Sound from "./Sound";
 import {connect} from "react-redux";
 
@@ -18,6 +19,7 @@ const Playlist = ({spin}) => {
             <Sound param={{id: 'bell', effect: bell}}/>
             <Sound param={{id: 'tic', effect: tic}}/>
             <Sound param={{id: 'fireworks', effect: fireworks}}/>
+            <Sound param={{id: 'success', effect: success}}/>
             {spin ? <Sound param={{id: 'roulette', effect: roulette}}/> : false}
         </div>
     );

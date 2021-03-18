@@ -7,7 +7,7 @@ import {
     PLAY_MONEY,
     PLAY_ROULETTE,
     PLAY_TIC, SPIN,
-    STOP_ALL
+    STOP_ALL, WIN
 } from "../types";
 
 const initialState = {
@@ -33,6 +33,8 @@ export const soundReducer = (state = initialState, action) => {
             return {...state, play: 'roulette'}
         case SPIN:
             return {...state, spin: action.payload}
+        case WIN:
+            return {...state, play: 'success'}
         case STOP_ALL:
             return {...state, play: ''}
         case MUTE:

@@ -7,7 +7,7 @@ import {
     PLAY_MONEY,
     PLAY_ROULETTE,
     PLAY_TIC, SPIN,
-    STOP_ALL
+    STOP_ALL, WIN
 } from "../types";
 
 export function click() {
@@ -39,4 +39,7 @@ export function stop() {
 }
 export function muteToggle() {
     return {type: MUTE}
+}
+export function win() {
+    return {type: WIN}
 }
