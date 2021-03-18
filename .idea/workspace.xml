@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bea685e-9d1d-40dc-af3c-53677054f828" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/images/wheel1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sound/roulette.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main/RightSector.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/RightSector.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Main/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/wheel.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/wheel.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions/music.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/music.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/sound.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/sound.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sound/Playlist.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sound/Playlist.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +37,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/sound" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -45,6 +49,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\PC-002\WebstormProjects\WinBtc247\src\sound" />
       <recent name="C:\Users\PC-002\WebstormProjects\WinBtc247\src\images" />
       <recent name="C:\Users\PC-002\WebstormProjects\WinBtc247\src\components\Main" />
       <recent name="C:\Users\PC-002\WebstormProjects\WinBtc247\src\video" />
@@ -73,7 +78,7 @@
       <workItem from="1615893070449" duration="5062000" />
       <workItem from="1615972766542" duration="6408000" />
       <workItem from="1616002913368" duration="6800000" />
-      <workItem from="1616058676237" duration="2515000" />
+      <workItem from="1616058676237" duration="4961000" />
     </task>
     <servers />
   </component>

@@ -3,7 +3,7 @@ import deposit from '../../images/deposit.svg';
 import withdraw from '../../images/withdraw.svg';
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
-import {click} from "../../redux/actions/music";
+import {click, roulette, spingo} from "../../redux/actions/music";
 import switchWallet from "../../images/switch_wallet.svg";
 import wheel from "../../images/wheel.svg";
 import spin from "../../images/spin.png";
@@ -12,7 +12,7 @@ import {changeDemo, userdata} from "../../redux/actions/game";
 import {createAd} from "../../redux/actions";
 import {User} from "../../api/User";
 
-const RightSector = ({balance, lastWinGame, lastgame, wins, colorBlalance, click, userdata, name, isDemo, threewins, changeDemo, createAd, predict}) => {
+const RightSector = ({balance, roulette, spingo, lastWinGame, lastgame, wins, colorBlalance, click, userdata, name, isDemo, threewins, changeDemo, createAd, predict}) => {
     const [switcher, setSwitcher] = useState(false);
     const [chance, setChance] = useState(0);
     const [go, setGo] = useState(false);
@@ -109,21 +109,24 @@ const RightSector = ({balance, lastWinGame, lastgame, wins, colorBlalance, click
 
                     </div>}
             </div>
-            <div onClick={() => {
-                setChance(0);
-                User.wheelSPeen()
-                    .then(res => {
-                        setChance((+res.data.data - 3) * 45 + 720);
-                        console.log(res.data.data)
-                        setGo(true);
-                        setTimeout(() => {
-                            setGo(false);
-                        }, 5000)
-                    })}} className="banner">
+            <div  className="banner">
                 <img style={{transform: `rotate(-${chance}deg)`}} className={ + go ? "wheel go" : "wheel"} src={wheel} alt="wheel"/>
+
                 <span className='span-spin'>Spin</span>
-                <img style={{display: go ? "none" : "inline"}} className="spin" src={spin} width={65} alt="spin"/>
-                <img className="pointer" src={pointer} alt="pointer"/>
+                <img onClick={() => {
+                    setChance(0);
+                    spingo(true);
+                    User.wheelSPeen()
+                        .then(res => {
+                            setChance((+res.data.data - 3) * 45 + 720);
+                            roulette();
+                            setGo(true);
+                            setTimeout(() => {
+                                setGo(false);
+                                spingo(false);
+                            }, 5000)
+                        })}} style={{display: go ? "none" : "inline"}} className="spin" src={spin} width={50} alt="spin"/>
+                <img  className="pointer" src={pointer} alt="pointer"/>
             </div>
         </div>
     );
@@ -146,6 +149,8 @@ const mapDispatchToProps = {
     click,
     userdata,
     changeDemo,
-    createAd
+    createAd,
+    roulette,
+    spingo
 }
 export default connect(mapStateToProps, mapDispatchToProps)(RightSector);
