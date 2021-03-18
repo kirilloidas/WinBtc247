@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bea685e-9d1d-40dc-af3c-53677054f828" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/images/wheel1.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Main/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/wheel.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/wheel.svg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +69,7 @@
       <workItem from="1615893070449" duration="5062000" />
       <workItem from="1615972766542" duration="6408000" />
       <workItem from="1616002913368" duration="6800000" />
-      <workItem from="1616058676237" duration="2515000" />
+      <workItem from="1616058676237" duration="3306000" />
     </task>
     <servers />
   </component>
