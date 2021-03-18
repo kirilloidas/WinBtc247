@@ -111,6 +111,8 @@ const RightSector = ({balance, roulette, spingo, lastWinGame, lastgame, wins, co
             </div>
             <div  className="banner">
                 <img style={{transform: `rotate(-${chance}deg)`}} className={ + go ? "wheel go" : "wheel"} src={wheel} alt="wheel"/>
+
+                <span className='span-spin'>Spin</span>
                 <img onClick={() => {
                     setChance(0);
                     spingo(true);
