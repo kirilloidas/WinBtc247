@@ -1157,6 +1157,7 @@ form {
 .banner {
   margin-top: 20px;
   position: relative;
+
   &:after {
     content: '';
     background-color: var(--dark-gradient);
@@ -1188,7 +1189,7 @@ form {
 
 .span-spin {
   position: absolute;
-
+  font-size: 24px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

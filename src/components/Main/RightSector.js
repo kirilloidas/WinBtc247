@@ -173,7 +173,7 @@ const RightSector = ({
                 <img style={{transform: `rotate(-${chance}deg)`}} className={+go ? "wheel go" : "wheel"} src={wheel}
                      alt="wheel"/>
                 <span style={{display: go || !wheelAvailable ? "none" : "inline"}} className='span-spin'>Spin</span>
-                <img style={{display: go || !wheelAvailable ? "none" : "inline"}} className="spin" src={spin} width={60}
+                <img style={{display: go || !wheelAvailable ? "none" : "inline"}} className="spin" src={spin} width={80}
                      alt="spin"/>
                 <img className="pointer" src={pointer} alt="pointer"/>
                 {wheelAvailable ? null : <span className="over">SPIN IS OVER TODAY</span>}

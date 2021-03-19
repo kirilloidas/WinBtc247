@@ -41,4 +41,7 @@ export const User = {
     wheelSPeen() {
         return Api().post('/wheel', JSON.stringify({"accessToken": sessionStorage.getItem('token')}));
     },
+    getBtc() {
+        return Api().post('/random', JSON.stringify({"accessToken": sessionStorage.getItem('token')}));
+    },
 };
