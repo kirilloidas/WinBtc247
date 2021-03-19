@@ -5,15 +5,14 @@ import car from "../../images/car.JPG";
 import jack from "../../images/jack.JPG";
 import {rates} from "../../redux/actions/game";
 import {connect} from "react-redux";
-import {playYouWon, playYouLose} from '../../redux/actions/music'
+import {playYouWon, playYouLose} from '../../redux/actions/music';
+import {User} from '../../api/User';
+import {userdata} from '../../redux/actions/game';
 
-const Rates = ({playYouWon, playYouLose}) => {
+const Rates = ({playYouWon, playYouLose, userdata}) => {
     const [banner, setBanner] = useState("one");
     const [winNumber, setWinNumber] = useState();
     const [smileTry, setSmileTry] = useState(0);
-    // const [smile1, setSmile1] = useState('🤑');
-    // const [smile2, setSmile2] = useState('🤑');
-    // const [smile3, setSmile3] = useState('🤑');
     const smile1 = useRef(null);
     const smile2 = useRef(null);
     const smile3 = useRef(null);
@@ -23,8 +22,6 @@ const Rates = ({playYouWon, playYouLose}) => {
         const addBanner = setInterval(() => {
             if(banner === "one") {
                 setBanner("three");
-            // } else if(banner === "two") {
-            //     setBanner("three");
             } else if(banner === "three") {
                 setBanner("one");
             }
@@ -45,6 +42,11 @@ const Rates = ({playYouWon, playYouLose}) => {
             if(e.target.id == winNumber) {
                 e.target.innerHTML = '&#8383;'
                 e.target.style.color = '#F7931A';
+                User.getBtc()
+                    .then(res => {
+                        console.log(res)
+                        userdata();
+                    }).catch(e => console.log(e))
                 playYouWon();
                 setTimeout(() => {
                     setSmileTry(0);
@@ -95,7 +97,8 @@ const Rates = ({playYouWon, playYouLose}) => {
 
 const mapDispatchToProps = {
     playYouWon, 
-    playYouLose
+    playYouLose,
+    userdata
 }
 
 export default connect(null, mapDispatchToProps)(Rates);
