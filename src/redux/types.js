@@ -29,6 +29,8 @@ export const SPIN ='SPIN';
 export const STOP_ALL ='STOP_ALL';
 export const MUTE ='MUTE';
 export const WIN ='WIN';
+export const YOU_WON = 'YOU_WON';
+export const YOU_LOSE ='YOU_LOSE';
 
 export const GET_USER_DATA = 'GET_USER_DATA';
 export const GET_RATES = 'GET_RATES';
