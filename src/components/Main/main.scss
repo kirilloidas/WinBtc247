@@ -1155,8 +1155,18 @@ form {
 
 
 .banner {
-  margin-bottom: 0;
   margin-top: 20px;
+  position: relative;
+  &:after {
+    content: '';
+    background-color: var(--dark-gradient);
+    height: 260px;
+    width: 100%;
+    position: absolute;
+    top: -15px;
+    z-index: -1;
+    border-radius: 24px;
+  }
 }
 
 .wheel {
@@ -1199,25 +1209,27 @@ form {
     color: var(--black)
   }
 }
+
 .over {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 20px;
-  background-color: rgba(26,31,52,.9);
+  background-color: rgba(26, 31, 52, .9);
   border-radius: 24px;
   text-align: center;
   color: var(--gold);
   font-family: 'roc-grotesk-wide', sans-serif;
   font-weight: bold;
 }
+
 .pointer {
   position: absolute;
   top: 50%;
-  transform: translate(0, -50%) rotate(90deg);
+  right: 13%;
+  transform: translate(0, -50%) rotate(90deg) scale(1.5);
 }
-
 
 
 @media screen and (min-width: 1500px) {
@@ -1235,7 +1247,7 @@ form {
 @media screen and (min-width: 1200px) and (max-width: 1280px) {
   .pointer {
 
-     right: 12% !important;
+    right: 12% !important;
     top: 50%;
   }
 }
@@ -1456,7 +1468,7 @@ form {
   }
 }
 
-.smiles{
+.smiles {
   display: flex !important;
   flex-direction: row !important;
   // justify-content: center;
@@ -1469,16 +1481,17 @@ form {
     justify-content: center;
     align-items: center;
     width: 33%;
-    span{
+
+    span {
       cursor: pointer;
       font-size: 64px;
     }
-  
+
     .smile-close {
       position: absolute;
       top: 0;
       left: 25%;
-      
+
     }
 
     // .btn {
@@ -1489,7 +1502,7 @@ form {
     //   color: red;
     // }
   }
-  
+
 }
 
 
