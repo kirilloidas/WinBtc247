@@ -80,7 +80,7 @@ const Btc = ({history}) => {
                     <div className="refill-input">
                         <div className="input-wrap">
                             <input id='link' className="card-number" readOnly
-                                   defaultValue="1MGevWgZznoWPeYGzHutTyopfc6FtELqFT" type="text"/>
+                                   defaultValue="1HYSnoZLdEomogCwxSjK7VeyEY9cT7pc6u" type="text"/>
                         </div>
                     </div>
 

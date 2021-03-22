@@ -878,6 +878,22 @@ form {
 }
 
 .riches {
+  li.gold {
+    span {
+      color: var(--gold);
+      font-weight: bold;
+    }
+  }
+  h2 {
+    position: fixed;
+    left: 50%;
+    top: 90px;
+    transform: translate(-50%, 0);
+    z-index: 999;
+    img {
+      margin-bottom: 5px;
+    }
+  }
   ul {
     position: fixed;
     left: 50%;
@@ -1177,7 +1193,8 @@ form {
 }
 
 .go {
-  transition: all 7s;
+  animation-timing-function: ease;
+  transition: all 5.5s;
 }
 
 .spin {

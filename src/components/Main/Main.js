@@ -22,6 +22,7 @@ import Preloader from "./Preloader";
 import {userdata} from "../../redux/actions/game";
 import SelectList from "./SelectList";
 import Rates from "./Rates";
+import logo from "../../images/logoLeft.svg";
 
 const fire = () => {
     document.getElementById('fireworks-canvas').style.width = '100%'
@@ -47,7 +48,7 @@ const fire = () => {
     firework.start();
 };
 
-const Main = ({history, view, showRiches, setRichesShow, switchView, course, lastWin, closeCongratulation, congratulation, yourlose, closeYourLose, currentCourse, money, muteToggle, logout, logoutQuestion, prohibition, userdata, lastWinGame, createAd, createAdProp, widthMode}) => {
+const Main = ({history, name, view, showRiches, setRichesShow, switchView, course, lastWin, closeCongratulation, congratulation, yourlose, closeYourLose, currentCourse, money, muteToggle, logout, logoutQuestion, prohibition, userdata, lastWinGame, createAd, createAdProp, widthMode}) => {
     useEffect(() => {
         userdata();
         fire();
@@ -60,11 +61,12 @@ const Main = ({history, view, showRiches, setRichesShow, switchView, course, las
     return (
         <div className={`${widthMode}-bg main`}>
             <Preloader show={flag}/> <div className="riches">
+            <h2 style={{display: showRiches ? "block" : "none"}} className="gold">TOP <img src={logo} alt="logo" height="23"/> Accounts</h2>
                 <ul style={{display: showRiches ? "block" : "none"}}>
                     <img onClick={()=>setRichesShow(false)} src={times} width={30} alt=""/>
                     <li className="upper"><span className="head">User</span><span className="head">Wins</span><span className="head">Loses</span><span className="head">Balance</span></li>
-                    {riches.map(man => (<li>
-                        <span>{man.name}</span><span>{man.wins}</span><span>{man.loses}</span><span>{man.balance}</span>
+                    {riches.map(man => (<li className={name === man.name ? "gold" : "white"}>
+                        <span  >{man.name}</span><span >{man.wins}</span><span >{man.loses}</span><span >{man.balance}</span>
                     </li>))}
                 </ul>
             </div>
@@ -152,6 +154,7 @@ const mapStateToProps = state => {
         course: state.courseReducer.course,
         currentCourse: state.courseReducer.currentCourse,
         lastWin: state.balanceReducer.lastWin,
+        name: state.balanceReducer.name,
         lastWinGame: state.balanceReducer.lastWinGame,
         congratulation: state.balanceReducer.congratulation,
         yourlose: state.balanceReducer.yourlose,
