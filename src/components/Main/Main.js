@@ -61,9 +61,11 @@ const Main = ({history, name, view, showRiches, setRichesShow, switchView, cours
     return (
         <div className={`${widthMode}-bg main`}>
             <Preloader show={flag}/> <div className="riches">
-            <h2 style={{display: showRiches ? "block" : "none"}} className="gold">TOP <img src={logo} alt="logo" height="23"/> Accounts</h2>
+            <h2 style={{display: showRiches ? "block" : "none"}} className="gold">TOP <img src={logo} alt="logo" height="23"/> Accounts
+                <img onClick={()=>setRichesShow(false)} src={times} className='riches-close' width={30} alt="" style={{display: widthMode !== "desktop" ? 'block' : 'none'}} />
+            </h2>
                 <ul style={{display: showRiches ? "block" : "none"}} className='riches-list'>
-                    <img onClick={()=>setRichesShow(false)} src={times} width={30} alt=""/>
+                    <img onClick={()=>setRichesShow(false)} src={times} width={30} alt="" style={{display: widthMode === "desktop" ? 'block' : 'none'}} />
                     <li className="upper"><span className="head">User</span><span className="head">Wins</span><span className="head">Loses</span><span className="head">Balance</span></li>
                     {riches.map(man => (<li className={name === man.name ? "gold" : "white"}>
                         <span  >{man.name}</span><span >{man.wins}</span><span >{man.loses}</span><span >{man.balance}</span>

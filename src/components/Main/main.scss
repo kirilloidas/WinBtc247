@@ -1370,12 +1370,20 @@ form {
   .riches {
     width: 100%;
     .gold{
-      margin-top: 15px;
+      // margin-top: 15px;
+      padding: 15px 20px 0 20px;
       font-size: 24px;
-      width: 80%;
+      width: 100%;
       text-align: center;
+      background-color: var(--dark-gradient);
       img{
         width: 160px;
+      }
+      .riches-close{
+        position: fixed;
+        right: 20px;
+        top: 10px;
+        width: 30px;
       }
     }
     .riches-list  {
@@ -1540,6 +1548,21 @@ form {
   }
 
 }
+@media screen and (max-width: 768px) and (max-height: 900px) {
+  .riches {
+    .riches-list{
+      max-height: 92vh;
+    }
+  }
+}
+@media screen and (max-width: 768px) and (max-height: 840px) {
+  .riches {
+    .riches-list{
+      max-height: 90vh;
+    }
+  }
+}
+
 
 
 
