@@ -1367,6 +1367,32 @@ form {
     padding: 24px 16px;
 
   }
+  .riches {
+    width: 100%;
+    .gold{
+      margin-top: 15px;
+      font-size: 24px;
+      width: 80%;
+      text-align: center;
+      img{
+        width: 160px;
+      }
+    }
+    .riches-list  {
+      width: 100%;
+      border: none;
+      padding: 100px 10px 0 10px;
+      margin-bottom: 0;
+      max-height: 88vh;
+      li {
+        span{
+          // flex: none;
+          // width: 25%;
+          overflow: hidden;
+        }
+      }
+    }
+  }
   .wrap-img-preload {
     margin-top: 15px;
 
