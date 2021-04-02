@@ -86,7 +86,7 @@ const Start = ({currentCourse, course, history, lastSeconds, userdata, widthMode
                         <span className="gold">WIN</span>BTC<span className="gold">24<b className="gold">/</b>7</span>
                     </h2>
                     {/*<p className="mt-3">Make real Bitcoin bets</p>*/}
-                    <video style={{objectFit: "cover"}} controls="controls" poster={poster} >
+                    <video controls="controls" poster={poster} >
                         <source src={promotion1}  type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'/>
                         <source src={promotion2} type='video/webm; codecs="vp8, vorbis"'/>
                         {/*<source src="video/duel.ogv" type='video/ogg; codecs="theora, vorbis"'>*/}

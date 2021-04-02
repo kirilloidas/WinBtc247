@@ -1,10 +1,24 @@
+:not(:root):fullscreen {
+  object-fit: cover;
+}
+
 .start {
   width: 1280px;
-video {
-  max-width: 40%;
-  border: 5px solid var(--text-color);
-  border-radius: 8px;
-}
+
+  video {
+    max-width: 40%;
+    border: 5px solid var(--text-color);
+    border-radius: 8px;
+
+    &:-webkit-full-screen {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      min-width: 100%;
+      min-height: 100%;
+    }
+  }
+
   .round {
     //background-image: url("../../images/bull_start.png"), url("../../images/bear_start.png");
     //background-position: .5% 3%, 99.5% 3%;
@@ -143,6 +157,7 @@ video {
   //  filter: blur(2px);
   //}
 }
+
 span.chross {
   position: absolute;
   right: 15px;
@@ -239,7 +254,6 @@ span.chross {
       overflow: auto;
 
 
-
       .text {
         margin-top: 80px;
         margin-bottom: 15px;
@@ -275,6 +289,7 @@ span.chross {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
         .time {
           display: none;
         }
@@ -297,10 +312,12 @@ span.chross {
           }
         }
       }
+
       .predict-btn.green,
-      .predict-btn.red{
+      .predict-btn.red {
         background-size: 40px;
       }
+
       .buttons {
         margin-top: 20px;
         margin-bottom: 10px;
@@ -350,20 +367,20 @@ span.chross {
   }
   .win-btn {
     .btn-primary {
-      width: 100%!important;
+      width: 100% !important;
     }
   }
-    .mobile-start {
-      background-image: url("../../images/mobile_bg.png");
-      background-position: center;
-      background-size: cover;
-      background-color: transparent;
-      border-radius: 0;
-    }
-  .predict-btn.green{
+  .mobile-start {
+    background-image: url("../../images/mobile_bg.png");
+    background-position: center;
+    background-size: cover;
+    background-color: transparent;
+    border-radius: 0;
+  }
+  .predict-btn.green {
     z-index: 0;
   }
-  .predict-btn.red{
+  .predict-btn.red {
     z-index: 0;
   }
   .predict-btn.green.green-start:after {
