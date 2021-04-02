@@ -3,9 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="8bea685e-9d1d-40dc-af3c-53677054f828" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_03_2021_16_28_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_03_2021_16_28__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main/RightSector.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/RightSector.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Main/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Start/Start.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Start/Start.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Start/start.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Start/start.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +79,11 @@
       <workItem from="1616002913368" duration="6800000" />
       <workItem from="1616058676237" duration="9495000" />
       <workItem from="1616162722761" duration="331000" />
+      <workItem from="1616410985884" duration="3238000" />
+      <workItem from="1616437652315" duration="1652000" />
+      <workItem from="1616680295951" duration="3233000" />
+      <workItem from="1617345648990" duration="143000" />
+      <workItem from="1617346096060" duration="1681000" />
     </task>
     <servers />
   </component>
